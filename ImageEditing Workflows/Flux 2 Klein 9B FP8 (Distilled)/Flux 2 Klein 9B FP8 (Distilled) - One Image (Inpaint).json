@@ -807,7 +807,7 @@
         "Node name for S&R": "UNETLoader"
       },
       "widgets_values": [
-        "flux2\\flux-2-klein-9b-fp8mixed.safetensors",
+        "flux-2-klein-base-9b-fp8.safetensors",
         "default"
       ]
     }

@@ -1,0 +1,47 @@
+# Scene 1 - Forest Introduction
+Beautiful watercolor forest at golden sunset, soft brushstrokes, gentle camera pan revealing landscape. Peaceful classical music background: soft piano melody resembling Brahms' Lullaby, gentle harp accompaniment, slow tempo 60 BPM, volume -20dB, blended with ambient forest sounds, warm peaceful atmosphere for bedtime.
+
+# Scene 2 - Lumi Appears
+Cute bunny with soft white fur in watercolor meadow, gentle hopping motion. Enchanting classical background: light orchestral with soft flutes and celesta, resembling Tchaikovsky's Dance of Sugar Plum Fairy, moderate tempo 70 BPM, volume -19dB, magical gentle quality, inviting and safe atmosphere.
+
+# Scene 3 - Discovery of Garden
+Magical garden with glowing flowers, watercolor illustration, slow zoom in to flowers. Gentle classical music: delicate harp arpeggios and soft strings, resembling Debussy's Arabesque No. 1, slow tempo 65 BPM, volume -20dB, wonder and curiosity mood, integrated with gentle breeze sounds, peaceful exploration.
+
+# Scene 4 - Meeting the Owl
+Wise owl perched on painted tree branch, soft character animation. Warm classical background: soft strings (violins and violas), resembling Vivaldi's Winter largo movement, gentle tempo 68 BPM, volume -19dB, comforting wise atmosphere, safe and protective feeling.
+
+# Scene 5 - Learning Moment
+Close-up of bunny listening, gentle head tilt animation. Soothing classical: minimalist piano solo resembling Chopin's Nocturne Op. 9 No. 2, very slow tempo 55 BPM, volume -21dB, contemplative peaceful mood, teaching moment atmosphere, gentle understanding.
+
+# Scene 6 - Walking Through Garden
+Bunny exploring garden path, watercolor flowers swaying. Pastoral classical music: soft flutes mimicking birds with gentle strings, resembling Beethoven's Pastoral Symphony, calm tempo 65 BPM, volume -20dB, integrated nature sounds, serene outdoor quality, peaceful journey.
+
+# Scene 7 - Meeting Fireflies
+Magical fireflies glowing around bunny, soft particle animation. Enchanting classical: celesta tinkles with soft harp, resembling Grieg's Morning Mood, gentle tempo 70 BPM, volume -19dB, sparkly magical quality, wonder and delight, safe magical atmosphere.
+
+# Scene 8 - Quiet Reflection
+Bunny sitting peacefully under painted moon, gentle breathing animation. Extremely soft classical lullaby: piano pianissimo resembling Satie's Gymnopédie No. 1, very slow tempo 50 BPM, volume -22dB, deep relaxation inducing, peaceful meditation, sleepy quality.
+
+# Scene 9 - Stargazing
+Looking up at watercolor starry sky, slow camera tilt upward. Dreamy classical: soft sustained strings with distant harp, resembling Debussy's Clair de Lune, slow tempo 58 BPM, volume -21dB, peaceful wonder, night sky serenity, gentle awe.
+
+# Scene 10 - Friendly Cricket
+Small cricket character appears, gentle animation. Light classical: playful but gentle woodwinds with soft strings, resembling Mozart's Eine Kleine Nachtmusik (slow movement), moderate tempo 72 BPM, volume -19dB, friendly safe atmosphere, gentle companionship.
+
+# Scene 11 - Learning About Sleep
+Bunny nodding understanding, soft character motion. Peaceful classical: warm string quartet, resembling Pachelbel's Canon (slow section), gentle tempo 60 BPM, volume -20dB, learning and acceptance mood, comforting realization, peaceful understanding.
+
+# Scene 12 - Journey Home
+Bunny hopping homeward through painted forest, smooth motion. Soothing classical: gentle piano with soft strings, resembling Schubert's Ave Maria, slow tempo 62 BPM, volume -20dB, homeward journey atmosphere, safe return feeling, peaceful resolution.
+
+# Scene 13 - Finding Burrow
+Cozy burrow entrance in watercolor, warm lighting. Warm classical background: soft violins and piano, resembling Bach's Air on G String, very slow tempo 55 BPM, volume -21dB, home and safety atmosphere, warm comfort, peaceful arrival.
+
+# Scene 14 - Settling In
+Bunny curling up in soft nest, gentle settling animation. Ultra-calming classical: minimalist piano resembling Brahms' Lullaby, extremely slow tempo 48 BPM, volume -22dB, deep relaxation, preparation for sleep, maximum comfort and safety.
+
+# Scene 15 - Peaceful Sleep
+Bunny sleeping peacefully, gentle breathing, moonlight through window. Final classical lullaby: soft piano solo fade to silence, resembling Chopin's Nocturne ending, very slow tempo 40 BPM, gradual fade out over 5 seconds, volume -23dB, complete peaceful resolution, sleep-inducing finale.
+
+# Scene 16 - Closing Shot
+Garden peaceful at night, stars twinkling, slow fade to black. Gentle classical music finale: single sustained piano note with soft strings fade, peaceful resolution, volume gradually to silence, serene conclusive atmosphere, perfect ending for sleep transition.
