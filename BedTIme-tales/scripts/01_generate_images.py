@@ -35,7 +35,17 @@ class ImageGenerator:
             'cierva': '04_cierva_rio',
             'cierva_rio': '04_cierva_rio',
             'zorro': '05_zorro_luna',
-            'zorro_luna': '05_zorro_luna'
+            'zorro_luna': '05_zorro_luna',
+            'tortuga': '06_tortuga_serena',
+            'tortuga_serena': '06_tortuga_serena',
+            'elefante': '07_elefante_nube',
+            'elefante_nube': '07_elefante_nube',
+            'panda': '08_panda_mochi',
+            'panda_mochi': '08_panda_mochi',
+            'pinguino': '09_pinguino_polo',
+            'pinguino_polo': '09_pinguino_polo',
+            'dragon': '10_dragoncito_chispa',
+            'dragoncito_chispa': '10_dragoncito_chispa',
         }
 
         folder = story_mapping.get(story_name.lower(), story_name)
@@ -93,8 +103,8 @@ class ImageGenerator:
             },
             "6": {
                 "inputs": {
-                    "width": 1024,
-                    "height": 1024,
+                    "width": 1920,
+                    "height": 1088,
                     "batch_size": 1
                 },
                 "class_type": "EmptyFlux2LatentImage"
@@ -257,7 +267,8 @@ def main():
     generator = ImageGenerator()
 
     if story_name.lower() == 'all':
-        stories = ['lumi_bunny', 'bruno_bear', 'gatita_nube', 'cierva_rio', 'zorro_luna']
+        stories = ['lumi_bunny', 'bruno_bear', 'gatita_nube', 'cierva_rio', 'zorro_luna',
+                   'tortuga_serena', 'elefante_nube', 'panda_mochi', 'pinguino_polo', 'dragoncito_chispa']
         for story in stories:
             generator.generate_story(story)
     else:

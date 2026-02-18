@@ -1,8 +1,8 @@
 # 🌙 Bedtime Tale Generation Skill
 
-**Purpose:** Create complete bedtime story content optimized for LTX2 video generation with narration and classical music.
+**Purpose:** Create complete bedtime story content optimized for LTX2 video generation with background music.
 
-**Output:** Ready-to-use files for automated video generation in Spanish and English.
+**Output:** Ready-to-use files for automated image and video generation, plus a separate Spanish narration script.
 
 ---
 
@@ -10,8 +10,8 @@
 
 ### Structure
 - **16 scenes** per tale
-- **20 seconds** per scene (480 frames at 24fps)
-- **Total duration:** ~5 minutes 20 seconds
+- **~19 seconds** per scene (481 frames at 25fps)
+- **Total duration:** ~5 minutes
 - **Target audience:** Children 3-7 years old
 - **Purpose:** Bedtime relaxation, sleep induction
 
@@ -35,21 +35,27 @@ Choose ONE style per tale:
 - Translucent washes, bleeding edges
 - Gentle color gradients
 - Perfect for: Nature stories, gentle animals
-- Examples: Lumi Bunny, Cierva Rio, Zorro Luna
+- Examples: Lumi Bunny, Cierva Rio, Zorro Luna, Tortuga Serena, Dragoncito Chispa
 
 ### Pixar 3D
 - Photorealistic fur/textures
 - Subsurface scattering, volumetric lighting
 - Cinematic quality, rich colors
 - Perfect for: Character-driven stories, emotional journeys
-- Example: Bruno Bear
+- Examples: Bruno Bear, Elefante Nube
 
-### Anime
-- Cel-shaded, clean lines
+### Anime (Studio Ghibli-inspired)
+- Soft cel-shaded, clean ink-wash lines
 - Vibrant colors, expressive characters
 - Gentle magical effects
 - Perfect for: Magical creatures, fantasy elements
-- Example: Gatita Nube
+- Examples: Gatita Nube, Panda Mochi
+
+### Painterly Digital Art
+- Rich vivid brushwork, dreamlike quality
+- Spectacular color and light
+- Perfect for: Epic natural phenomena, aurora borealis, ocean
+- Example: Pinguino Polo
 
 ---
 
@@ -67,7 +73,7 @@ Choose ONE style per tale:
 **Scene 7:** Wonder moment (magical discovery)
 **Scene 8:** Reflection (quiet contemplation)
 **Scene 9:** Understanding grows (aha moment building)
-**Scene 10:** Friendship (companion appears)
+**Scene 10:** Friendship (companion appears or deepens)
 **Scene 11:** Realization (lesson learned)
 **Scene 12:** Return journey (heading home)
 
@@ -82,70 +88,48 @@ Choose ONE style per tale:
 ## ✍️ Required Files per Tale
 
 ### File 1: `01_image_prompts.txt`
-**Purpose:** Generate still images (Flux 2 Klein)
-**Format:** One prompt per line, 16 total
-**Length:** 30-50 words per prompt
-**Focus:** Visual description only, no motion/audio
+**Purpose:** Generate still images (Flux 2 Klein, 1920×1088)
+**Format:** One prompt per line, 16 total, blank line between each
+**Length:** 40-80 words per prompt
+**Focus:** Rich visual description only — no motion, no audio
 
 **Example:**
 ```
-Beautiful watercolor white bunny, fluffy fur, pink ears, big eyes, golden meadow sunset, wildflowers, soft brushstrokes, paper texture, warm colors, dreamy storybook quality
+Pixar 3D animation of small brown bear cub Bruno with fluffy soft fur, round chubby body, big expressive brown eyes, sitting in golden meadow at twilight, looking upward at starry sky, warm rim lighting, cool blue sky gradient, wildflowers around, cinematic quality, 1920x1088 widescreen
 ```
 
-### File 2: `02_video_prompts_spanish.txt`
-**Purpose:** Generate videos with Spanish narration
-**Format:** One prompt per line, 16 total
-**Length:** 100-120 words per prompt (LTX2 limit!)
-**Includes:** Visuals + Camera + Music + Spanish narrator
+### File 2: `02_video_prompts.txt`
+**Purpose:** Guide LTX2 video generation (visual + motion only)
+**Format:** One prompt per line, 16 total, blank line between each
+**Length:** 70-100 words per prompt
+**Includes:** Art style + Scene visuals + Character action + Camera movement + Lighting/atmosphere
+**Does NOT include:** Narrator, dialog, music specs — music is added in post-production
 
 **Structure:**
 ```
-[Art style] animation. [Scene visuals]. [Camera movement] 20s, [lens]mm, f/[stop].
-[Color palette]. [Motion], 24fps. MUSIC: [Classical piece] [instrument], [tempo]BPM,
-vol -[20-22]dB. NARRADOR: (voz maternal cálida) "[narración en español]" vol -8dB.
+[Art style]. [Scene/setting description]. [Character description and action]. [Camera movement] over 20s, [lens]mm, f/[stop]. [Color/light palette]. [Motion/animation details]. [Atmosphere/mood].
 ```
-
-### File 3: `02_video_prompts_english_optimized.txt`
-**Purpose:** Generate videos with English character voices
-**Format:** One prompt per line, 16 total
-**Length:** 120-150 words per prompt (LTX2 limit!)
-**Includes:** Visuals + Camera + Music + Character voices
-
-**Structure:**
-```
-[Art style] animation. [Scene visuals]. [Camera movement] 20s, [lens]mm, f/[stop].
-[Color palette]. [Motion], 24fps. MUSIC: [Classical piece] [instrument], [tempo]BPM,
-vol -[20-22]dB. NARRATOR: ([voice type]) "[narration]" vol -8dB. CHARACTER: ([voice type])
-"[dialogue]" vol -[9-10]dB.
-```
-
-### File 4: `spanish_narration.txt`
-**Purpose:** Full Spanish narration script
-**Format:** Scene-by-scene dialogue with character labels
-**Length:** 1-2 sentences per scene
 
 **Example:**
 ```
-[ESCENA 1 - Bosque al atardecer]
-NARRADOR: En un bosque tranquilo, donde las estrellas cantan cada noche, vivía un conejito llamado Lumi.
-
-[ESCENA 2 - Lumi aparece]
-NARRADOR: Lumi era especial, con pelaje suave como nubes y ojitos curiosos.
+Pixar 3D animation. Vast starlit meadow at twilight, deep blue sky transitioning to purple-pink horizon, thousands of twinkling stars, rolling hills with gently swaying grass. Slow crane-up revealing expansive sky over 20s, 35mm, f/2.8. Rich twilight palette, volumetric God rays filtering through distant trees. Grass swaying in gentle breeze, stars beginning to pulse softly, magical peaceful atmosphere.
 ```
 
-### File 5: `english_narration.txt`
-**Purpose:** Full English dialogue script with character voices
-**Format:** Scene-by-scene with multiple characters
-**Length:** 1-3 lines per scene
+### File 3: `narration_spanish.md`
+**Purpose:** Full Spanish narration script — used for post-production voice recording, NOT embedded in video prompts
+**Format:** Scene-by-scene markdown with character labels
+**Length:** 1-3 sentences per scene
 
 **Example:**
-```
-[SCENE 1 - Forest at Sunset]
-NARRATOR: In a peaceful forest where stars sing, lived little bunny Lumi.
+```markdown
+## Escena 1 — El prado al atardecer
 
-[SCENE 2 - Lumi Appears]
-NARRATOR: Lumi was special, with fur soft as clouds and curious eyes.
-LUMI: (young child voice) The night is so big and full of mysteries!
+**NARRADOR:** En un prado tranquilo donde las estrellas brillan cada noche, vivía el osito Bruno.
+
+## Escena 2 — Bruno mira las estrellas
+
+**NARRADOR:** Bruno tenía el pelaje más suave y unos ojitos llenos de curiosidad.
+**BRUNO:** *(curioso)* "¿Por qué brillan tanto las estrellas?"
 ```
 
 ---
@@ -175,211 +159,45 @@ LUMI: (young child voice) The night is so big and full of mysteries!
 
 ---
 
-## 🎵 Classical Music Guide
+## 📏 LTX2 Video Prompt Optimization Rules
 
-### Scene Mood → Music Mapping
+### CRITICAL: Keep Prompts Focused
+- **No narrator text** — LTX2 generates visuals, not speech
+- **No music specs** — music is added in post-production
+- **No dialog** — LTX2 cannot render spoken words
+- **Focus on:** what is seen, how it moves, how the camera moves
 
-**Opening/Establishing (Scene 1):**
-- Brahms' Lullaby - Piano
-- 60 BPM, vol -20dB
-- Calm, welcoming
-
-**Introduction (Scenes 2-3):**
-- Tchaikovsky Sugar Plum - Celesta/Flute
-- 70 BPM, vol -19dB
-- Gentle, magical
-
-**Teaching Moments (Scenes 4-5):**
-- Vivaldi Winter Largo - Strings
-- Chopin Nocturne - Piano
-- 55-68 BPM, vol -19 to -21dB
-- Wise, contemplative
-
-**Exploration (Scenes 6-7):**
-- Beethoven Pastoral - Flute/Strings
-- Grieg Morning Mood - Celesta/Harp
-- 65-70 BPM, vol -19 to -20dB
-- Wonder, discovery
-
-**Reflection (Scenes 8-9):**
-- Debussy Clair de Lune - Piano/Harp
-- Satie Gymnopédie - Piano
-- 50-58 BPM, vol -21 to -22dB
-- Peaceful, meditative
-
-**Friendship (Scene 10):**
-- Mozart Nachtmusik - Woodwinds/Strings
-- 72 BPM, vol -19dB
-- Friendly, warm
-
-**Resolution (Scene 11):**
-- Pachelbel Canon - Strings
-- 60 BPM, vol -20dB
-- Understanding, acceptance
-
-**Return (Scene 12):**
-- Schubert Ave Maria - Piano/Strings
-- 62 BPM, vol -20dB
-- Homeward, safe
-
-**Arrival (Scene 13):**
-- Bach Air on G String - Violin/Piano
-- 55 BPM, vol -21dB
-- Home, comfort
-
-**Bedtime (Scenes 14-15):**
-- Brahms Lullaby - Piano
-- Chopin Nocturne - Piano
-- 40-48 BPM, vol -22 to -23dB
-- Sleepy, peaceful
-
-**Closing (Scene 16):**
-- Piano/Strings fading to silence
-- 40 BPM, vol -24dB to silence
-- Complete peace
-
----
-
-## 👥 Character Voice Specifications
-
-### Narrator (Always Present)
+### Word Budget
 ```
-NARRATOR: (soft warm maternal voice) vol -8dB
-NARRADOR: (voz maternal cálida suave) vol -8dB
-```
-
-### Child Protagonists
-```
-(young innocent child voice, high-pitched, gentle) vol -10dB
-(voz de niño inocente joven, aguda, gentil) vol -10dB
-```
-
-### Wise Mentors (Owls, Old Animals)
-```
-(deep gentle grandfatherly voice, calm reassuring) vol -9dB
-(voz profunda abuelo gentil, calmada tranquilizadora) vol -9dB
-```
-
-### Adult Protective Characters (Parents)
-```
-(warm loving adult female/male voice, protective) vol -9dB
-(voz adulta cariñosa femenina/masculina, protectora) vol -9dB
-```
-
-### Friend Characters (Insects, Small Animals)
-```
-(cheerful friendly voice, slightly high pitch) vol -10dB
-(voz alegre amigable, tono ligeramente agudo) vol -10dB
-```
-
----
-
-## 📏 LTX2 Prompt Optimization Rules
-
-### CRITICAL: Token Limits
-- **Maximum:** 250 tokens (~180 words)
-- **Optimal:** 150-180 tokens (~120-150 words)
-- **Minimum:** 100 words (ensure detail)
-
-### Word Budget Breakdown
-```
-Art Style:           5 words
-Scene Visuals:       25-30 words
-Camera/Technical:    12-15 words
-Color/Atmosphere:    8-10 words
-Motion:             8-10 words
-Music:              15-20 words
-Narration/Voices:   30-50 words
-TOTAL:              120-150 words
+Art Style:           5-8 words
+Scene Visuals:       25-35 words
+Character Action:    10-15 words
+Camera/Technical:    10-15 words
+Color/Atmosphere:    10-15 words
+Motion Details:      10-15 words
+TOTAL:               70-100 words
 ```
 
 ### Optimization Techniques
 
+**Always include:**
+- Art style keyword at start
+- Essential visual description of scene
+- Character description + what they are doing
+- Camera movement with "over 20s"
+- Lighting and color palette
+- Motion/animation cues (swaying, breathing, twitching, etc.)
+
 **Remove:**
+- Any NARRATOR or CHARACTER dialog
+- Music BPM, volume specs
 - Redundant adjectives
-- Repetitive descriptions
-- Over-detailed textures
-- Multiple similar words
+- Overly detailed textures that LTX2 won't render
 
-**Keep:**
-- Art style keyword
-- Essential visuals
-- Camera specs (20s always!)
-- Music reference
-- Character voices
-- Dialogue
-
-**Example - Before (Too Long - 250 words):**
+**Good Example:**
 ```
-Beautiful watercolor painting animation with soft flowing brushstrokes and delicate
-visible paper texture creating natural artistic quality. Tranquil peaceful serene forest
-at golden sunset with painted purple and pink gradient sky featuring hand-painted
-crescent moon and gentle watercolor stars with soft diffused edges...
+Watercolor animation. Cozy burrow entrance, soft earth tones, moss and flowers, warm golden light spilling from inside. White bunny Lumi approaching home slowly through moonlit night. Dolly-in to entrance over 20s, 50mm, f/2.2. Warm amber glow contrasting cool night blues. Lumi walking with gentle contentment, pausing to look back at stars, light spilling warmly from doorway.
 ```
-
-**Example - After (Perfect - 130 words):**
-```
-Watercolor animation. Tranquil forest sunset, purple-pink sky, crescent moon, stars,
-mountain silhouettes, meadow grass, wildflowers. Slow pan-right 20s, 35mm, f/2.8.
-Golden palette, soft edges, dreamy quality. Gentle swaying, 24fps. MUSIC: Brahms
-Lullaby piano-harp, 60BPM, vol -20dB, forest ambience. NARRATOR: (warm maternal)
-"In peaceful forest where stars sing, lived little bunny Lumi." vol -8dB.
-```
-
----
-
-## 🌍 Language-Specific Guidelines
-
-### Spanish Version
-**Narration Style:** Single narrator reads the story
-**Voice:** Warm maternal storyteller
-**Tone:** Gentle bedtime story reading
-**Word Count:** 100-120 words per prompt (simpler)
-
-**Example Narration:**
-```
-NARRADOR: En un bosque tranquilo vivía un conejito llamado Lumi. Cada noche,
-las estrellas cantaban para él mientras descubría los secretos de la noche mágica.
-```
-
-### English Version
-**Narration Style:** Multiple character voices + narrator
-**Voices:** Narrator + Character dialogue
-**Tone:** Interactive story with character personalities
-**Word Count:** 120-150 words per prompt (more complex)
-
-**Example Dialogue:**
-```
-NARRATOR: (maternal voice) In a peaceful forest lived little bunny Lumi.
-LUMI: (young child voice) The night is so big and mysterious!
-NARRATOR: And so Lumi's adventure began.
-```
-
----
-
-## 📝 Character Creation Guidelines
-
-### Protagonist Requirements
-- **Age:** Child or young
-- **Trait:** Curious, gentle, learning
-- **Arc:** Overcomes small fear or learns valuable lesson
-- **Examples:** Lumi (bunny), Bruno (bear), Gatita (kitten)
-
-### Mentor/Guide Requirements
-- **Age:** Wise, older
-- **Trait:** Patient, kind, knowledgeable
-- **Role:** Teaches without forcing, guides gently
-- **Examples:** Wise Owl, Old Bear, Ancient Tree
-
-### Friend Characters
-- **Role:** Supportive, companionship
-- **Examples:** Cricket, Fireflies, Small Birds
-- **Purpose:** Show protagonist not alone
-
-### Setting Characters (Optional)
-- **Role:** Part of environment, magical elements
-- **Examples:** Talking Flowers, Gentle Wind, Stars
-- **Purpose:** Create magical atmosphere
 
 ---
 
@@ -389,9 +207,9 @@ NARRATOR: And so Lumi's adventure began.
 ```
 1. Choose protagonist (animal, child-like)
 2. Choose lesson (fear of dark, being alone, trying new things)
-3. Choose art style (watercolor/Pixar/anime)
-4. Choose setting (forest, garden, meadow, river)
-5. Name characters (simple, memorable)
+3. Choose art style (watercolor/Pixar/anime/painterly)
+4. Choose setting (forest, garden, meadow, river, arctic, ocean)
+5. Name characters (simple, memorable, often alliterative)
 ```
 
 ### Step 2: Story Outline
@@ -406,47 +224,38 @@ Create 16-scene structure following arc template:
 
 **File 1: `01_image_prompts.txt`**
 ```
-- 16 lines
-- Visual description only
-- 30-50 words each
-- Focus on composition
+- 16 lines (blank line between each)
+- Visual description only (no motion/audio)
+- 40-80 words each
+- Include: art style, character, setting, lighting, resolution
+- End with: 1920x1088 widescreen
 ```
 
-**File 2: `spanish_narration.txt`**
+**File 2: `02_video_prompts.txt`**
 ```
-- 16 scenes labeled
-- Spanish dialogue
-- 1-2 sentences per scene
-```
-
-**File 3: `english_narration.txt`**
-```
-- 16 scenes labeled
-- Character names + voice types
-- 1-3 lines per scene
+- 16 lines (blank line between each)
+- LTX2 visual/motion prompts only
+- 70-100 words each
+- NO narrator, NO dialog, NO music
+- Include: art style, scene, character action, camera, motion, atmosphere
 ```
 
-**File 4: `02_video_prompts_spanish.txt`**
+**File 3: `narration_spanish.md`**
 ```
-- 16 lines (one per scene)
-- 100-120 words each
-- Include: visuals + camera + music + Spanish narration
-```
-
-**File 5: `02_video_prompts_english_optimized.txt`**
-```
-- 16 lines (one per scene)
-- 120-150 words each
-- Include: visuals + camera + music + English character voices
+- Markdown format
+- 16 scenes labeled with ## headers
+- Spanish narrator + character dialog
+- 1-3 sentences per scene
+- Bold character labels: **NARRADOR:**, **PERSONAJE:**
 ```
 
-### Step 4: Optimize
+### Step 4: Validate
 ```
-1. Check word counts (LTX2 limits!)
-2. Verify music selections match mood
-3. Ensure 20-second duration mentioned
-4. Confirm voice types specified
-5. Validate classical piece references
+1. Check video prompt word counts (70-100 words)
+2. Verify NO narrator/dialog/music in video prompts
+3. Ensure camera movement is described in each scene
+4. Confirm art style is consistent throughout
+5. Confirm narration_spanish.md covers all 16 scenes
 ```
 
 ### Step 5: Folder Structure
@@ -454,11 +263,30 @@ Create 16-scene structure following arc template:
 stories/
 └── <number>_<story_name>/
     ├── 01_image_prompts.txt
-    ├── 02_video_prompts_spanish.txt
-    ├── 02_video_prompts_english_optimized.txt
-    ├── spanish_narration.txt
-    └── english_narration.txt
+    ├── 02_video_prompts.txt
+    └── narration_spanish.md
 ```
+
+---
+
+## 📝 Character Creation Guidelines
+
+### Protagonist Requirements
+- **Age:** Child or young
+- **Trait:** Curious, gentle, learning
+- **Arc:** Overcomes small fear or learns valuable lesson
+- **Examples:** Lumi (bunny), Bruno (bear), Gatita (kitten), Mochi (panda)
+
+### Mentor/Guide Requirements
+- **Age:** Wise, older
+- **Trait:** Patient, kind, knowledgeable
+- **Role:** Teaches without forcing, guides gently
+- **Examples:** Wise Owl, Old Bear, Luna (moon sprite), Ancient Panda Spirit
+
+### Friend Characters
+- **Role:** Supportive, companionship
+- **Examples:** Cricket, Fireflies, Nia (polar bear cub), Kiku (firefly)
+- **Purpose:** Show protagonist is not alone
 
 ---
 
@@ -472,25 +300,25 @@ stories/
 - [ ] Calming, sleep-inducing
 - [ ] Educational/emotional learning
 
-### Technical Requirements
-- [ ] All prompts optimized for LTX2 (120-180 words)
-- [ ] 20-second duration mentioned in each scene
-- [ ] Classical music specified with tempo/volume
-- [ ] Character voices clearly defined
-- [ ] Camera movements appropriate
-- [ ] Art style consistent throughout
+### 01_image_prompts.txt
+- [ ] 16 prompts, one per line with blank line between
+- [ ] Visual description only (no motion/audio)
+- [ ] Art style consistent
+- [ ] Resolution specified (1920x1088 widescreen)
 
-### File Requirements
-- [ ] 5 files created per story
-- [ ] Proper naming convention
-- [ ] Correct folder structure
-- [ ] Both Spanish and English versions
+### 02_video_prompts.txt
+- [ ] 16 prompts, one per line with blank line between
+- [ ] NO narrator, NO dialog, NO music specs
+- [ ] Art style keyword at start of each
+- [ ] Camera movement described in every scene
+- [ ] Motion/animation cues included
+- [ ] 70-100 words per prompt
 
-### Audio Specifications
-- [ ] Music: -18dB to -22dB
-- [ ] Narrator: -8dB
-- [ ] Characters: -9dB to -10dB
-- [ ] Tempo: 40-75 BPM (relaxing range)
+### narration_spanish.md
+- [ ] 16 scenes with ## headers
+- [ ] Spanish narration for each scene
+- [ ] Character voices labeled
+- [ ] Calm, warm, bedtime tone
 
 ---
 
@@ -500,73 +328,45 @@ stories/
 <number>_<character>_<setting>
 
 Examples:
-01_lumi_bunny        (Lumi the Bunny)
-02_bruno_bear        (Bruno the Bear)
-03_gatita_nube       (Gatita Cloud/Nube)
-04_cierva_rio        (Little Deer and River)
-05_zorro_luna        (Little Fox and Moon)
-06_ardilla_bosque    (Little Squirrel and Forest)
+01_lumi_bunny          (Lumi the Bunny — Watercolor)
+02_bruno_bear          (Bruno the Bear — Pixar)
+03_gatita_nube         (Gatita the Cloud Kitten — Anime)
+04_cierva_rio          (Little Deer and River — Watercolor)
+05_zorro_luna          (Little Fox and Moon — Watercolor)
+06_tortuga_serena      (Tortuga the Serene Turtle — Watercolor)
+07_elefante_nube       (Elefante the Cloud Elephant — Pixar)
+08_panda_mochi         (Panda Mochi — Anime/Ghibli)
+09_pinguino_polo       (Penguin Polo — Painterly Digital)
+10_dragoncito_chispa   (Little Dragon Chispa — Fantasy Watercolor)
 ```
 
 ---
 
-## 💡 Example Tale Prompts
-
-### Tale 1: The Little Bunny (Watercolor)
-**Protagonist:** Lumi, white bunny
-**Lesson:** Night is not scary
-**Style:** Watercolor, soft, dreamy
-**Setting:** Forest, magical garden
-
-### Tale 2: The Bear Cub (Pixar)
-**Protagonist:** Bruno, brown bear
-**Lesson:** You're never alone
-**Style:** Pixar 3D, photorealistic
-**Setting:** Meadow, starry night
-
-### Tale 3: The Kitten (Anime)
-**Protagonist:** Gatita, small kitten
-**Lesson:** Dreams are beautiful
-**Style:** Anime, cel-shaded, vibrant
-**Setting:** Clouds, starry sky
-
----
-
-## 🚀 Generation Command Examples
-
-After creating all files:
+## 🚀 Generation Commands
 
 ```bash
-# Generate images
-python 01_generate_images.py <story_name>
+# Generate images (Flux 2 Klein, 1920x1088)
+python scripts/01_generate_images.py <story_name>
 
-# Generate Spanish version
-python 02_generate_videos_spanish.py <story_name>
+# Generate videos (LTX2, 481 frames, 25fps)
+python scripts/02_generate_videos.py <story_name>
 
-# Generate English version
-python 02_generate_videos_english.py <story_name>
+# Generate all stories
+python scripts/01_generate_images.py all
+python scripts/02_generate_videos.py all
 ```
-
----
-
-## 📖 Required Reading
-
-Before creating tales, review:
-1. **`LTX2_OPTIMIZATION_GUIDE.md`** - Token limits & optimization
-2. **`PROMPT_FORMAT_WITH_MUSIC.md`** - Classical music guide
-3. **`README.md`** - Complete system overview
 
 ---
 
 ## ✨ Final Notes
 
 **Purpose:** Help children sleep peacefully
-**Approach:** Gentle, calming, reassuring
-**Quality:** Professional, consistent, optimized
-**Languages:** Spanish (narrator) + English (characters)
-**Duration:** ~5 minutes 20 seconds per story
-**Music:** Classical, soothing, sleep-inducing
-**Result:** Beautiful narrated bedtime videos
+**Approach:** Gentle, calming, reassuring visuals
+**Video:** Pure visual storytelling + background music (no spoken narration in video)
+**Narration:** Separate Spanish .md script for voice recording in post-production
+**Duration:** ~5 minutes per story (16 scenes × ~19s each)
+**Resolution:** 1920×1088 (both images and video)
+**Result:** Beautiful bedtime videos with calming music
 
 ---
 

@@ -39,7 +39,17 @@ class VideoGenerator:
             'cierva': '04_cierva_rio',
             'cierva_rio': '04_cierva_rio',
             'zorro': '05_zorro_luna',
-            'zorro_luna': '05_zorro_luna'
+            'zorro_luna': '05_zorro_luna',
+            'tortuga': '06_tortuga_serena',
+            'tortuga_serena': '06_tortuga_serena',
+            'elefante': '07_elefante_nube',
+            'elefante_nube': '07_elefante_nube',
+            'panda': '08_panda_mochi',
+            'panda_mochi': '08_panda_mochi',
+            'pinguino': '09_pinguino_polo',
+            'pinguino_polo': '09_pinguino_polo',
+            'dragon': '10_dragoncito_chispa',
+            'dragoncito_chispa': '10_dragoncito_chispa',
         }
 
         folder = story_mapping.get(story_name.lower(), story_name)
