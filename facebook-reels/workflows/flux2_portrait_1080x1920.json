@@ -1,0 +1,421 @@
+{
+  "id": "fb-reels-flux2-portrait-1080x1920",
+  "revision": 0,
+  "last_node_id": 209,
+  "last_link_id": 255,
+  "nodes": [
+    {
+      "id": 196,
+      "type": "VAELoader",
+      "pos": [
+        -805,
+        496
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            236
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "flux2-vae.safetensors"
+      ]
+    },
+    {
+      "id": 195,
+      "type": "CLIPLoader",
+      "pos": [
+        -996,
+        345
+      ],
+      "size": [
+        461,
+        106
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            235
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen_3_8b_fp8mixed.safetensors",
+        "flux2",
+        "default"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -511,
+        294
+      ],
+      "size": [
+        424,
+        293
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 235
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            219,
+            255
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "Studio Ghibli anime watercolor illustration, portrait orientation, [your scene description here], vertical composition, dramatic lighting, soft painterly style"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 163,
+      "type": "KSampler",
+      "pos": [
+        159,
+        275
+      ],
+      "size": [
+        296,
+        262
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 245
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 255
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 254
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 237
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            187
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        952098076484379,
+        "randomize",
+        4,
+        1,
+        "euler",
+        "simple",
+        1
+      ]
+    },
+    {
+      "id": 190,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        -60,
+        347
+      ],
+      "size": [
+        204,
+        26
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 219
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            254
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "ConditioningZeroOut"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 164,
+      "type": "VAEDecode",
+      "pos": [
+        480,
+        275
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 187
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 236
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            242
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.32",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 203,
+      "type": "SaveImage",
+      "pos": [
+        485,
+        367
+      ],
+      "size": [
+        455,
+        520
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 242
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.10.0",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "reel_portrait"
+      ]
+    },
+    {
+      "id": 197,
+      "type": "EmptyFlux2LatentImage",
+      "pos": [
+        -303,
+        634
+      ],
+      "size": [
+        210,
+        106
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            237
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.10.0",
+        "Node name for S&R": "EmptyFlux2LatentImage"
+      },
+      "widgets_values": [
+        1080,
+        1920,
+        1
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 145,
+      "type": "MarkdownNote",
+      "pos": [
+        -1598,
+        213
+      ],
+      "size": [
+        550,
+        521
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Facebook Reels — Portrait Image Generation",
+      "properties": {},
+      "widgets_values": [
+        "# Facebook Reels — Portrait Image Generation\n\n## Settings\n- **Resolution:** 1080 × 1920 (9:16 portrait)\n- **Model:** flux-2-klein-base-9b-fp8.safetensors\n- **CLIP:** qwen_3_8b_fp8mixed.safetensors\n- **VAE:** flux2-vae.safetensors\n- **Steps:** 4 (distilled)\n- **Sampler:** euler\n\n## Prompt Tips for Portrait\n- Use vertical composition keywords: 'portrait orientation', 'vertical framing'\n- Emphasize tall elements: pillars, trees, cliffs, falling light\n- Keep subject in center vertical third\n- Leave top and bottom 15% as safe zones for text overlays\n\n## Content Types\n- **ghibli_mythology/** — Ghibli watercolor style mythology\n- **realistic_mythology/** — Cinematic photorealistic mythology  \n- **nature_ambient/** — Painterly ambient nature loops\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 194,
+      "type": "UNETLoader",
+      "pos": [
+        -1031,
+        217
+      ],
+      "size": [
+        495,
+        82
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            245
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.76",
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "flux-2-klein-base-9b-fp8.safetensors",
+        "default"
+      ]
+    }
+  ],
+  "links": [
+    [187, 163, 0, 164, 0, "LATENT"],
+    [219, 6, 0, 190, 0, "CONDITIONING"],
+    [235, 195, 0, 6, 0, "CLIP"],
+    [236, 196, 0, 164, 1, "VAE"],
+    [237, 197, 0, 163, 3, "LATENT"],
+    [242, 164, 0, 203, 0, "IMAGE"],
+    [245, 194, 0, 163, 0, "MODEL"],
+    [254, 190, 0, 163, 2, "CONDITIONING"],
+    [255, 6, 0, 163, 1, "CONDITIONING"]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.76,
+      "offset": [1675, 36]
+    },
+    "frontendVersion": "1.38.13",
+    "node_versions": {
+      "comfy-core": "v0.3.10-37-gd055325"
+    },
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true,
+    "workflowRendererVersion": "LG"
+  },
+  "version": 0.4
+}
